@@ -3,7 +3,7 @@
 **Candidate Name:** Samkit Jain
 **College Email ID:** 123cs0171@nitrkl.ac.in
 **College / Campus:** NIT Rourkela
-**Demo Video Link:** [YouTube / Unlisted]
+**Demo Video Link:** https://youtu.be/b6WMy5j7kAE?si=WM13DtM32wbHZ8LP
 **Slide Deck Link (if hosted externally):** [Optional]
 
 ## 1. Project Overview / Problem Statement & Approach
