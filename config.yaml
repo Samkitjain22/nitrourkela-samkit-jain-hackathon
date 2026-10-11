@@ -1,0 +1,58 @@
+paths:
+  data_dir: data
+  signals_csv: data/signals.csv
+  signals_json: data/signals.json
+  prices_csv: data/prices.csv
+  portfolio_csv: data/portfolio_positions.csv
+  eval_csv: data/labeled_eval.csv
+  news_csv: data/news_sample.csv
+  tweets_csv: data/tweets_sample.csv
+
+nlp:
+  sentiment_model: ProsusAI/finbert
+  use_transformers: true
+  use_zero_shot: false
+  zeroshot_model: facebook/bart-large-mnli
+  max_length: 128
+
+impact:
+  weights:
+    event: 0.35
+    sentiment: 0.20
+    source: 0.20
+    recency: 0.10
+    novelty: 0.15
+  recency_half_life_hours: 24
+  novelty_lookback: 50
+
+sources:
+  credibility:
+    reuters: 1.0
+    bloomberg: 1.0
+    ft: 0.95
+    financial times: 0.95
+    wsj: 0.9
+    wall street journal: 0.9
+    gdelt: 0.8
+    newsapi: 0.7
+    twitter: 0.4
+    x: 0.4
+    default: 0.6
+
+module_a:
+  tickers: ["AAPL","MSFT","AMZN","GOOGL","META","NVDA","JPM","V","JNJ","WMT","XOM","PG","UNH","HD","BAC"]
+  base_weight: 0.0667
+  max_weight: 0.15
+  min_weight: 0.0
+  tilt_factor: 0.5
+  turnover_limit: 0.30
+  transaction_cost_bps: 5
+  decay_half_life_hours: 48
+
+module_b:
+  impact_threshold: 7.0
+  trigger_events: ["Geopolitical","Credit Event","Macroeconomic"]
+
+live:
+  interval_seconds: 60
+  newsapi_key: ""
